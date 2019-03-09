@@ -1,0 +1,140 @@
+
+nav{
+  width:100%;
+  display:block;
+  background-color:transparent;
+  z-index:10;
+  position: absolute;
+  .hamburger{
+    float:right;
+    cursor: pointer;
+    .hamburger-inner, .hamburger-box{
+      pointer-events: none;
+    }
+  }
+  ul.nav-list{
+    max-width:0;
+    transition: max-width .5s ease-in-out;
+    overflow:hidden;
+    width:50%;
+    &.is-active{
+      max-width:50%;
+    }
+  }
+  ul{
+    list-style: none;
+    padding-inline-start: 0;
+    margin:0;
+    li{
+      a{
+        width:100%;
+        padding:10px;
+        background-color:$body_background;
+        display:block;
+        color: $base_color--black;
+        position:relative;
+        cursor: pointer;
+        font-size:14px;
+        &:hover{
+          background-color:darken($body_background, 10%);
+          text-decoration: none;
+          color: $base_color--black;
+        }
+      }
+    }
+  }
+  .dropdown{
+    min-width:120px;
+    &> a::after{
+      content: url('/icons/down-chevron.svg');
+      width:12px;
+      height:12px;
+      display:inline-block;
+      margin: 0 5px;
+    }
+    ul{
+      max-height:0;
+      transition: max-height .5s ease-in-out;
+      overflow:hidden;
+    }
+    &.open{
+      &> a::after{
+        content: url('/icons/up-chevron.svg');
+      }
+      ul{
+        max-height:88px; //- 44px * max number of list items (2)
+      }
+    }
+  }
+  .dropdown-list a{
+    background-color: $base_color--white;
+  }
+}
+
+@media screen and (min-width:576px){
+  nav{
+    position:relative;
+    max-height:none;
+    background-color:$base_color--white;
+    width:100%;
+    padding: 5px 0;
+    .hamburger{
+      display:none;
+    }
+    ul.nav-list{
+      max-width: none;
+      overflow: visible;
+      width: auto;
+      transition: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      li{
+        display:inline-block;
+        width:auto;
+        margin:0;
+        a{
+          background-color:transparent;
+          width:auto;
+          &:hover{
+            background-color: transparent;
+          }
+        }
+        &.dropdown{
+          min-width: unset;
+          ul.dropdown-list{
+            display:none;
+            max-height: none;
+            overflow: visible;
+            width: auto;
+            transition: none;
+            position:absolute;
+            padding: 5px 0;
+            background-color: white;
+            border: 1px solid $body_background;
+            border-radius: 3px;
+            top: 35px;
+            li{
+              clear:both;
+              display:block;
+              width:90px;
+              a{
+                background-color: $base_color--white;
+                padding: 5px 10px;
+                &:hover{
+                  background-color: $body_background;
+                }
+              }
+            }
+          }
+          &.open ul{
+            display:block;
+          }
+          &:hover ul{
+            display:block;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+
+.header{
+  width:100%;
+  height:390px;
+  display:block;
+  background-image: url(/images/banner1.jpg);
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center center;
+  position: relative;
+  &:before{
+    content: url(/images/truenorth-white.png);
+    width:200px;
+    height:200px;
+    position:absolute;
+    display:block;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.intro{
+  padding:0 15px;
+}
+
+.portfolio{
+  overflow:hidden;
+}
+.block{
+  width: 100%;
+  margin: 15px 0;
+  height: 200px;
+  display: inline-block;
+  position: relative;
+  background-color: #000;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: transform .3s;
+  @media screen and (min-width:576px){
+    width: calc(50% - 30px);
+    margin: 15px;
+    height: 200px;
+    &:hover{
+      transform: translateY(-5px);
+    }
+  }
+  @media screen and (min-width:767px){
+    width: calc(33.3333% - 30px);
+    margin: 15px;
+    height: 200px;
+  }
+  label{
+    color:$base_color--white;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width:100%;
+    text-align:center;
+    pointer-events: none;
+  }
+  &.objects{
+    background-image: url(/images/objects.jpg);
+  }
+  &.spring{
+    background-image: url(/images/spring.jpg);
+  }
+  &.nature{
+    background-image: url(/images/nature.jpg);
+  }
+  &.icons{
+    background-image: url(/images/icons.jpg);
+  }
+  &.architecture{
+    background-image: url(/images/architecture.jpg);
+  }
+  &.iphone{
+    background-image: url(/images/iphoneMockup3.jpg);
+  }
+}
+
+.about{
+  background-color: $content_background--dark;
+  padding:50px 60px;
+  width:calc(100% - 30px);
+  margin:0 auto;
+  .display-picture{
+    width:120px;
+    height:120px;
+    display:block;
+    border-radius:50%;
+    background-color:white;
+    background-image: url(/images/portrait.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 35%;
+    position:relative;
+    margin:10px auto;
+  }
+  .social-media{
+    padding-top:20px;
+    img{
+      width:30px;
+      display:inline-block;
+      margin: 0 3px;
+    }
+  }
+}
