@@ -22,6 +22,25 @@ $font_size--small: 13px;
 $font-size--medium: 16px;
 $font-size--large: 22px;
 
+// Mixins
+
+// Saves 2 lines every time a css before/after is used
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+// Reduces the amount of code required for media queries
+@mixin mq($width, $type: min) {
+    @if $type == max {
+        $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+        @content;
+    }
+}
+
+
 body{
   background-color: $body_background;
 }

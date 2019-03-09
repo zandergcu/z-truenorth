@@ -16,7 +16,7 @@ footer{
         }
       }
     }
-    @media screen and (max-width:576px){
+    @include mq(576px, max){
       flex-direction:column;
       padding-top:10px;
       li{

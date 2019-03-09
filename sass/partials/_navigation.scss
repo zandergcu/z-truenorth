@@ -46,10 +46,9 @@ nav{
   .dropdown{
     min-width:120px;
     &> a::after{
-      content: url('/icons/down-chevron.svg');
+      @include pseudo(inline-block, relative, url('/icons/down-chevron.svg'));
       width:12px;
       height:12px;
-      display:inline-block;
       margin: 0 5px;
     }
     ul{
@@ -71,7 +70,7 @@ nav{
   }
 }
 
-@media screen and (min-width:576px){
+@include mq(576px){
   nav{
     position:relative;
     max-height:none;
