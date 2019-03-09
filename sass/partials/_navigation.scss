@@ -34,7 +34,7 @@ nav{
         color: $base_color--black;
         position:relative;
         cursor: pointer;
-        font-size:14px;
+        font-size:$font-size--small;
         &:hover{
           background-color:darken($body_background, 10%);
           text-decoration: none;

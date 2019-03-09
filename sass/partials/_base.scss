@@ -17,6 +17,11 @@ $base_font--weight: $font_weight--regular;
 $base_font--size: 12px;
 $base_font--lineheight: 1.4;
 
+// Font sizes
+$font_size--small: 13px;
+$font-size--medium: 16px;
+$font-size--large: 22px;
+
 body{
   background-color: $body_background;
 }
@@ -44,21 +49,21 @@ h1,h2,h3{
   letter-spacing: 5px;
 }
 h1{
-  font-size:22px;
+  font-size:$font-size--large;
   padding-top:70px;
   padding-bottom:40px;
 }
 h2{
-  font-size:22px;
+  font-size:$font-size--large;
   padding-top:40px;
   padding-bottom:40px;
 }
 h3{
-  font-size:16px;
+  font-size:$font-size--medium;
   padding-bottom:5px;
   letter-spacing: 2.75px;
 }
 p{
-  font-size:13px;
+  font-size:$font-size--small;
   line-height:1.6;
 }
