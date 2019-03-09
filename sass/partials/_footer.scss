@@ -18,14 +18,15 @@ footer{
     }
     @include mq(576px, max){
       flex-direction:column;
-      padding-top:10px;
+      padding-top:0px;
+      padding-bottom:20px;
       li{
-        padding:10px;
+        padding:5px 10px;
       }
     }
   }
   img{
-    margin:0 auto;
     display:block;
+    margin:0 auto;
   }
 }

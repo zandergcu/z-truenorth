@@ -3,18 +3,13 @@
   width:100%;
   height:390px;
   display:block;
-  background-image: url(/images/banner1.jpg);
-  background-size: cover;
-  background-repeat:no-repeat;
-  background-position: center center;
   position: relative;
+  @include background-image(url(/images/banner1.jpg));
   &:before{
-    @include pseudo($content:url(/images/truenorth-white.png));
     width:200px;
     height:200px;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
+    @include pseudo($content:url(/images/truenorth-white.png));
+    @include center;
   }
 }
 
@@ -25,21 +20,18 @@
 .portfolio{
   overflow:hidden;
 }
+
 .block{
   width: 100%;
-  margin: 15px 0;
   height: 200px;
   display: inline-block;
   position: relative;
-  background-color: #000;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  margin: 15px 0;
   transition: transform .3s;
+  @include background-image;
   @include mq(576px){
     width: calc(50% - 30px);
     margin: 15px;
-    height: 200px;
     &:hover{
       transform: translateY(-5px);
     }
@@ -47,17 +39,14 @@
   @include mq(767px){
     width: calc(33.3333% - 30px);
     margin: 15px;
-    height: 200px;
   }
   label{
-    color:$base_color--white;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
     width:100%;
+    position: absolute;
+    color:$base_color--white;
     text-align:center;
     pointer-events: none;
+    @include center;
   }
   &.objects{
     background-image: url(/images/objects.jpg);
@@ -80,22 +69,19 @@
 }
 
 .about{
-  background-color: $content_background--dark;
-  padding:50px 60px;
   width:calc(100% - 30px);
+  padding:50px 60px;
   margin:0 auto;
+  background-color: $content_background--dark;
   .display-picture{
     width:120px;
     height:120px;
     display:block;
-    border-radius:50%;
-    background-color:white;
-    background-image: url(/images/portrait.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50% 35%;
     position:relative;
     margin:10px auto;
+    border-radius:50%;
+    background-color:white;
+    @include background-image(url(/images/portrait.png), contain, $position: 50% 35%);
   }
   .social-media{
     padding-top:20px;

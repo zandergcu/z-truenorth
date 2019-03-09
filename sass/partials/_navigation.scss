@@ -2,9 +2,9 @@
 nav{
   width:100%;
   display:block;
+  position: absolute;
   background-color:transparent;
   z-index:10;
-  position: absolute;
   .hamburger{
     float:right;
     cursor: pointer;
@@ -13,10 +13,10 @@ nav{
     }
   }
   ul.nav-list{
+    width:50%;
     max-width:0;
     transition: max-width .5s ease-in-out;
     overflow:hidden;
-    width:50%;
     &.is-active{
       max-width:50%;
     }
@@ -28,17 +28,17 @@ nav{
     li{
       a{
         width:100%;
-        padding:10px;
-        background-color:$body_background;
         display:block;
-        color: $base_color--black;
         position:relative;
-        cursor: pointer;
+        padding:10px;
         font-size:$font-size--small;
+        background-color:$body_background;
+        color: $base_color--black;
+        cursor: pointer;
         &:hover{
           background-color:darken($body_background, 10%);
-          text-decoration: none;
           color: $base_color--black;
+          text-decoration: none;
         }
       }
     }
@@ -72,29 +72,30 @@ nav{
 
 @include mq(576px){
   nav{
+    width:100%;
     position:relative;
+    padding: 5px 0;
     max-height:none;
     background-color:$base_color--white;
-    width:100%;
-    padding: 5px 0;
     .hamburger{
       display:none;
     }
     ul.nav-list{
+      width: auto;
       max-width: none;
       overflow: visible;
-      width: auto;
       transition: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex-center;
+      &.is-active{
+        max-width: none;
+      }
       li{
-        display:inline-block;
         width:auto;
+        display:inline-block;
         margin:0;
         a{
-          background-color:transparent;
           width:auto;
+          background-color:transparent;
           &:hover{
             background-color: transparent;
           }
@@ -102,24 +103,24 @@ nav{
         &.dropdown{
           min-width: unset;
           ul.dropdown-list{
-            display:none;
-            max-height: none;
-            overflow: visible;
             width: auto;
-            transition: none;
+            display:none;
             position:absolute;
             padding: 5px 0;
             background-color: white;
             border: 1px solid $body_background;
             border-radius: 3px;
             top: 35px;
+            max-height: none;
+            overflow: visible;
+            transition: none;
             li{
-              clear:both;
-              display:block;
               width:90px;
+              display:block;
+              clear:both;
               a{
-                background-color: $base_color--white;
                 padding: 5px 10px;
+                background-color: $base_color--white;
                 &:hover{
                   background-color: $body_background;
                 }

@@ -30,7 +30,7 @@ $font-size--large: 22px;
     display: $display;
     position: $pos;
 }
-// Reduces the amount of code required for media queries
+// Media Queries
 @mixin mq($width, $type: min) {
     @if $type == max {
         $width: $width - 1px;
@@ -39,7 +39,25 @@ $font-size--large: 22px;
         @content;
     }
 }
-
+// Center Elements
+@mixin center($top:50%, $left:50%, $transform: translate(-50%, -50%)){
+  top:$top;
+  left:$left;
+  transform: $transform;
+}
+// Background Images
+@mixin background-image($image: url(images/specify.jpg), $size: cover, $repeat: no-repeat, $position: center center){
+  background-image: $image;
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
+}
+// Flex Center
+@mixin flex-center($display: flex, $align: center, $justify: center){
+  display: $display;
+  align-items: $align;
+  justify-content: $justify;
+}
 
 body{
   background-color: $body_background;
@@ -53,9 +71,7 @@ body{
 }
 
 .flex-center{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
 }
 
 h1, h2, h3, p{
