@@ -4,7 +4,7 @@
   height:390px;
   display:block;
   position: relative;
-  @include background-image(url(/images/banner1.jpg));
+  @include background-image(url(/images/banner.jpg));
   &:before{
     width:200px;
     height:200px;
@@ -89,6 +89,10 @@
       width:30px;
       display:inline-block;
       margin: 0 3px;
+      transition: transform .3s ease-in-out;
+      &:hover{
+        transform: translateY(-5px);
+      }
     }
   }
 }
