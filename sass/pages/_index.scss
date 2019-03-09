@@ -6,9 +6,9 @@
   position: relative;
   @include background-image(url(/images/banner.jpg));
   &:before{
-    width:200px;
-    height:200px;
-    @include pseudo($content:url(/images/truenorth-white.png));
+    width:180px;
+    height:180px;
+    @include pseudo($content:url(/images/truenorth-white.svg));
     @include center;
   }
 }
