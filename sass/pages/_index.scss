@@ -27,13 +27,13 @@
   display: inline-block;
   position: relative;
   margin: 15px 0;
-  transition: transform .3s;
+  @include prefix(transition, transform .3s);
   @include background-image;
   @include mq(576px){
     width: calc(50% - 30px);
     margin: 15px;
     &:hover{
-      transform: translateY(-5px);
+      @include prefix(transform, translateY(-5px));
     }
   }
   @include mq(767px){
@@ -90,9 +90,9 @@
       height:30px;
       display:inline-block;
       margin: 0 3px;
-      transition: transform .3s ease-in-out;
+      @include prefix(transition, transform .3s)
       &:hover{
-        transform: translateY(-5px);
+        @include prefix(transform, translateY(-5px))
       }
     }
   }
