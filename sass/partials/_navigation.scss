@@ -101,7 +101,7 @@ nav{
           }
         }
         &.dropdown{
-          min-width: unset;
+          min-width: 0;
           ul.dropdown-list{
             width: auto;
             display:none;
